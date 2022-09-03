@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+
+}
+
+:root {
+    --main-color: #418CB4;
+    --paragraph-color: #717171;
+    --transitionTme: 0.3s
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width:767px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width:1199px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+/* Start Header */
+
+.header .container {
+    display: flex;
+    align-items: center;
+}
+
+.header .container .logo img {
+    width: 100px;
+}
+
+.header .container nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 100px;
+    margin-right: 30px;
+
+}
+
+/*Manu items level - Themes*/
+.header .container nav .menu li {
+    display: inline-block;
+    position: relative;
+    transition: var(--transitionTme);
+
+}
+
+.header .container nav .menu li a {
+    cursor: pointer;
+    color: var(--paragraph-color);
+    padding: 10px;
+    transition: var(--transitionTme);
+    font-family: sans-serif;
+    font-size: 18px;
+
+    display: block;
+}
+
+.header .container nav .menu li.active a,
+.header .container nav .menu li:hover a {
+    color: var(--main-color);
+
+}
+
+
+
+.header .container nav .menu li.branch:hover::before {
+    content: "";
+    position: absolute;
+    height: 12px;
+    top: 16px;
+    right: -5px;
+    border: 8px solid;
+    border-color: var(--paragraph-color) transparent transparent;
+    transition: all .4s;
+    transition-delay: .6s;
+
+}
+
+.header .container nav .menu li.branch .box {
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    position: absolute;
+}
+
+
+
+.header .container nav .menu li.branch .sub-branch li {
+    visibility: hidden;
+    color: #777;
+    width: 280px;
+    font-size: 13px;
+    font: 1em sans-serif;
+
+
+}
+
+.header .container nav .menu li.branch .sub-branch li p:last-of-type {
+    font-size: 14px;
+    color: #cccaca;
+
+}
+
+.header .container nav .menu li.branch:hover .sub-branch li {
+    visibility: visible;
+    transition-delay: .6s;
+
+
+}
+
+/* End Header */
